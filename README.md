@@ -1,9 +1,11 @@
 # Flip Clock Timer
+Little project to fix my clock.
+
 ## Problem
 The Flip Clock consists of a fairly standard looking timekeeping clock part
 and a flip mechanism to show AM/PM, the day or month, weekday and month. The
-timekeeping clock part is a self-contained module which should trigger the
-flip mechanism twice a day, approximately at noon and midnight.
+timekeeping clock part is a self-contained clock module which should trigger
+the flip mechanism twice a day, approximately at noon and midnight.
 
 Unfortunately the trigger is unreliable. It seems to work for a few days
 or weeks, then stop working, then start working again.
@@ -16,13 +18,13 @@ connector:
 - Pin 3: Yellow, `B`
 
 Every twelve hours the trigger operates as follows:
-# Short `A` to `Common`.
-# Wait
-# Disconnect `A` and `Common`
-# Wait
-# Short `B` and `Common`.
-# Wait
-# Disconnect `B` and `Common`
+1. Short `A` to `Common`.
+2. Wait.
+3. Disconnect `A` and `Common`.
+4. Wait.
+5. Short `B` and `Common`.
+6. Wait.
+7. Disconnect `B` and `Common`.
 
 ## Aim
 Create device to simulate trigger by the clock part:
